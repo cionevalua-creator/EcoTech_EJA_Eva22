@@ -18,7 +18,7 @@ class Usuario:
         return self._contraseña
 
     @contraseña.setter
-    def contraseña(self, contraseña:str):
+    def contraseña(self, contraseña:str) -> None:
         if not contraseña.strip():
             raise ValueError("El campo no puede estar vacio.")
         self._contraseña = contraseña.strip()
