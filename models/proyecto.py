@@ -1,11 +1,13 @@
 from datetime import date 
 
 class Proyecto:
-    def __init__(self, id_proyecto:int, nombre:str, descripcion:str, fecha_inicio:date):
+    def __init__(self, id_proyecto:int, nombre:str, descripcion:str, fecha_inicio:date, id_departamento:int):
         self.id_proyecto = id_proyecto
         self.nombre = nombre
         self.descripcion = descripcion
         self.fecha_inicio = fecha_inicio
+        self.id_departamento = id_departamento
+
 
     @property
     def id_proyecto(self) -> int:
@@ -46,3 +48,13 @@ class Proyecto:
         if fecha_inicio > date.today():
             raise ValueError("La fecha de inicio no puede ser mayor a la fecha actual.")
         self._fecha_inicio = fecha_inicio
+
+    @property
+    def id_departamento(self) -> int:
+        return self._id_departamento
+
+    @id_departamento.setter
+    def id_departamento(self, id_departamento:int) -> None:
+        if id_departamento <= 0:
+            raise ValueError("El id debe ser mayor a 0.")
+        self._id_departamento = id_departamento

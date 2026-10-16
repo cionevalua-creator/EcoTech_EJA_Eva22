@@ -1,6 +1,6 @@
 from datetime import date
 class Empleado:
-    def __init__(self, id:int, nombre:str, correo:str, fecha_inicio:date, direccion:str, telefono:str, salario:float):
+    def __init__(self, id:int, nombre:str, correo:str, fecha_inicio:date, direccion:str, telefono:str, salario:float, id_departamento:int, id_proyecto:int, id_usuario:int):
         self.id = id
         self.nombre = nombre
         self.correo = correo
@@ -8,6 +8,10 @@ class Empleado:
         self.direccion = direccion
         self.telefono = telefono
         self.salario = salario
+        self.id_departamento = id_departamento
+        self.id_proyecto = id_proyecto
+        self.id_usuario = id_usuario
+
 
     @property
     def id(self) -> int:
@@ -82,3 +86,34 @@ class Empleado:
         if salario < 1 or salario > 999999999.99:
             raise ValueError("El salario debe estar entre 1 y 999.999.999.99")
         self._salario = salario
+
+    @property
+    def id_departamento(self) -> int:
+        return self._id_departamento
+
+    @id_departamento.setter
+    def id_departamento(self, id_departamento:int) -> None:
+        if id_departamento <= 0:
+            raise ValueError("El id debe ser mayor a 0.")
+        self._id_departamento = id_departamento
+
+    @property
+    def id_proyecto(self) -> int:
+        return self._id_proyecto
+
+    @id_proyecto.setter
+    def id_proyecto(self, id_proyecto:int) -> None:
+        if id_proyecto <= 0:
+            raise ValueError("El id debe ser mayor a 0.")
+        self._id_proyecto = id_proyecto
+
+    @property
+    def id_usuario(self) -> int:
+        return self.id_usuario
+
+    @id_usuario.setter
+    def id_usuario(self, id_usuario:int) -> None:
+        if id_usuario <= 0:
+            raise ValueError("El id debe ser mayor a 0.")
+        self._id_usuario = id_usuario
+
