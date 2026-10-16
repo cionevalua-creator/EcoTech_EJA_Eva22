@@ -1,7 +1,7 @@
 from datetime import date
 class Empleado:
-    def __init__(self, id:int, nombre:str, correo:str, fecha_inicio:date, direccion:str, telefono:str, salario:float, id_departamento:int, id_proyecto:int, id_usuario:int):
-        self.id = id
+    def __init__(self, id_empleado:int, nombre:str, correo:str, fecha_inicio:date, direccion:str, telefono:str, salario:float, id_departamento:int, id_proyecto:int, id_usuario:int):
+        self.id_empleado = id_empleado
         self.nombre = nombre
         self.correo = correo
         self.fecha_inicio = fecha_inicio
@@ -14,14 +14,14 @@ class Empleado:
 
 
     @property
-    def id(self) -> int:
-        return self._id 
+    def id_empleado(self) -> int:
+        return self._id_empleado
 
-    @id.setter
-    def id(self, id:int) -> None:
-        if id <= 0:
+    @id_empleado.setter
+    def id_empleado(self, id_empleado:int) -> None:
+        if id_empleado is not None and id_empleado <= 0:
             raise ValueError("El id debe ser mayor a 0.")
-        self._id = id 
+        self._id_empleado = id_empleado 
 
     @property 
     def nombre(self) -> str:
@@ -93,7 +93,7 @@ class Empleado:
 
     @id_departamento.setter
     def id_departamento(self, id_departamento:int) -> None:
-        if id_departamento <= 0:
+        if id_departamento is not None and id_departamento <= 0:
             raise ValueError("El id debe ser mayor a 0.")
         self._id_departamento = id_departamento
 
@@ -109,7 +109,7 @@ class Empleado:
 
     @property
     def id_usuario(self) -> int:
-        return self.id_usuario
+        return self._id_usuario
 
     @id_usuario.setter
     def id_usuario(self, id_usuario:int) -> None:

@@ -1,18 +1,18 @@
 class Departamento:
-    def __init__(self, id:int, nombre:str, gerente_asociado:str):
-        self.id = id
+    def __init__(self, id_departamento:int, nombre:str, gerente_asociado:str):
+        self.id_departamento = id_departamento
         self.nombre = nombre
         self.gerente_asociado = gerente_asociado
 
     @property
-    def id(self) -> int:
-        return self._id 
+    def id_departamento(self) -> int:
+        return self._id_departamento 
 
-    @id.setter
-    def id(self, id:int) -> None:
-        if id <= 0:
+    @id_departamento.setter
+    def id_departamento(self, id_departamento:int) -> None:
+        if id_departamento is not None and id_departamento <= 0:
             raise ValueError("El id debe ser mayor a 0.")
-        self._id = id
+        self._id_departamento = id_departamento
 
     @property
     def nombre(self) -> str:

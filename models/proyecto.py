@@ -55,6 +55,6 @@ class Proyecto:
 
     @id_departamento.setter
     def id_departamento(self, id_departamento:int) -> None:
-        if id_departamento <= 0:
+        if id_departamento is not None and id_departamento <= 0:
             raise ValueError("El id debe ser mayor a 0.")
         self._id_departamento = id_departamento
