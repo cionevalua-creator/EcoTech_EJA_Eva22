@@ -9,7 +9,7 @@ class EmpleadoDao:
         try:
             cursor: Cursor = conn.cursor()
             cursor.execute(
-                "INSERT INTO empleado (nombre, correo, fecha_inicio, direccion, telefono, salario, id_departamento, id_proyecto, id_usuario) VALUES (?,?,?,?,?,?,?,?,?)" ,
+                "INSERT INTO empleado (nombre, correo, fecha_inicio, direccion, telefono, salario, id_departamento, id_proyecto, id_usuario) VALUES (?,?,?,?,?,?,?,?,?)", 
                 (empleado.nombre, empleado.correo, empleado.fecha_inicio, empleado.direccion, empleado.telefono, empleado.salario, empleado.id_departamento, empleado.id_proyecto, empleado.id_usuario)
             )
             conn.commit()

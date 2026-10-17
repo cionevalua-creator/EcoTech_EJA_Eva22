@@ -15,7 +15,7 @@ class Proyecto:
 
     @id_proyecto.setter
     def id_proyecto(self, id_proyecto:int) -> None:
-        if id_proyecto <= 0:
+        if id_proyecto is not None and id_proyecto <= 0:
             raise ValueError("El id debe ser mayor a 0.")
         self._id_proyecto = id_proyecto
 

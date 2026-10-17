@@ -15,7 +15,7 @@ class RegistroTiempo:
 
     @id_registrotiempo.setter
     def id_registrotiempo(self, id_registrotiempo:int) -> None:
-        if id_registrotiempo <= 0:
+        if id_registrotiempo is not None and id_registrotiempo <= 0:
             raise ValueError("El id debe ser mayor a 0.")
         self._id_registrotiempo = id_registrotiempo
 
