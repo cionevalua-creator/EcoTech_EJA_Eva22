@@ -27,7 +27,7 @@ class DepartamentoView:
             print("No hay departamentos registrados.")
         else:
             for d in departamentos:
-                print(f"Id: {d.id_departamento} | Nombre: {d.nombre} | Gerente: {d.gerente_asociado}")
+                print(f"ID Departamento: {d.id_departamento} | Nombre: {d.nombre} | Gerente: {d.gerente_asociado}")
         print("-" * 30)
 
     @staticmethod
