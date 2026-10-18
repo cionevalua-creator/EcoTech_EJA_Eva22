@@ -18,11 +18,7 @@ class DepartamentoView:
         print("\n--- AGREGAR NUEVO DEPARTAMENTO ---")
         nombre = input("Ingrese el nombre del departamento: ")
         gerente = input("Ingrese el nombre del gerente asociado: ")
-
-        return {
-            "nombre":nombre,
-            "gerente_asociado":gerente
-        }
+        return {"nombre":nombre,"gerente_asociado":gerente}
 
     @staticmethod
     def mostrar_lista_departamentos(departamentos: list[Departamento]) -> None:
