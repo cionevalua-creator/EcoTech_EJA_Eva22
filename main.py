@@ -9,6 +9,11 @@ from models.registrotiempo import RegistroTiempo
 from models.registrotiempo_dao import Registrotiempo_Dao
 from models.usuario import Usuario
 from models.usuario_dao import Usuario_Dao
+from controllers.main_controller import MainController
+
+if __name__ == "__main__":
+    app = MainController()
+    app.ejecutar()
 
 nuevo_departamento = Departamento(None, 'Finasas', 'Jose')
 
