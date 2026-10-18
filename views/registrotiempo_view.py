@@ -29,14 +29,7 @@ class RegistroTiempoView:
         descripcion = input("Descripcion de la tarea: ")
         id_empleado = leer_numero("ID del Empleado: ")
         id_proyecto = leer_numero("ID del Proyecto: ")
-
-        return {
-            "fecha": fecha,
-            "horas_trabajadas": horas,
-            "descripcion": descripcion,
-            "id_empleado": id_empleado,
-            "id_proyecto": id_proyecto
-        }
+        return {"fecha": fecha, "horas_trabajadas": horas, "descripcion": descripcion, "id_empleado": id_empleado, "id_proyecto": id_proyecto}
 
     @staticmethod
     def mostrar_lista_registros(registros: list[RegistroTiempo]) -> None:
@@ -45,7 +38,7 @@ class RegistroTiempoView:
             print("No hay registros guardados.")
         else:
             for r in registros:
-                print(f"ID: {r.id_registrotiempo} | Fecha: {r.fecha} | Horas: {r.horas_trabajadas} | Emp ID: {r.id_empleado} | Proy ID: {r.id_proyecto}")
+                print(f"ID Registrotiempo: {r.id_registrotiempo} | Fecha: {r.fecha} | Horas Trabajadas: {r.horas_trabajadas} | ID Empleado: {r.id_empleado} | ID Proyecto: {r.id_proyecto}")
         print("-" * 30)
 
     @staticmethod
