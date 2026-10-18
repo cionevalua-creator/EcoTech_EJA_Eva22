@@ -1,6 +1,7 @@
 from sqlite3 import Cursor
 from config.database import Database
 from models.empleado import Empleado
+from datetime import date
 
 class EmpleadoDao:
     @staticmethod
@@ -27,10 +28,11 @@ class EmpleadoDao:
         empleados = []
         try:
             cursor: Cursor = conn.cursor()
-            cursor.execute("SELECT id_empleado, nombre, correo, fecha_inicio, direccion, telefono, salario, id_departamento, id_proyecrto, id_usuario FROM empleado")
+            cursor.execute("SELECT id_empleado, nombre, correo, fecha_inicio, direccion, telefono, salario, id_departamento, id_proyecto, id_usuario FROM empleado")
             filas = cursor.fetchall()
             for fila in filas:
-                empleados.append(Empleado(fila['nombre'], fila['correo'], fila['fecha_inicio'], fila['direccion'], fila['telefono'], fila['salario'], fila['id_departamento'], fila['id_proyecto'], fila['id_usuario']))
+                fecha_real = date.fromisoformat(fila['fecha_inicio'])
+                empleados.append(Empleado(fila['id_empleado'], fila['nombre'], fila['correo'], fecha_real, fila['direccion'], fila['telefono'], fila['salario'], fila['id_departamento'], fila['id_proyecto'], fila['id_usuario']))
         except Exception as e:
             print(f"Error al obtener empleados: {e}")
         finally:

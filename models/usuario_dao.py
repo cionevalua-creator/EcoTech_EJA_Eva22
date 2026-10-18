@@ -2,7 +2,7 @@ from sqlite3 import Cursor
 from config.database import Database
 from models.usuario import Usuario
 
-class Usuario_Dao:
+class UsuarioDao:
     @staticmethod
     def crear(usuario:Usuario) -> bool:
         conn = Database().get_connection()

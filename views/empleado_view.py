@@ -10,7 +10,7 @@ class EmpleadoView:
         print("-" * 30)
         print("1.   AGREGAR EMPLEADO")
         print("2.   MOSTRAR TODOS LOS EMPLEADOS")
-        print("0.   VOLVER AL (MENU PRINCIAL)")
+        print("0.   VOLVER AL (MENU PRINCIPAL)")
         print("-" * 30)
         return leer_numero("Seleccione una opcion: ")
 
@@ -21,13 +21,13 @@ class EmpleadoView:
         correo = input("Correo: ")
 
         print("FECHA DE INICIO: ")
-        anio = leer_numero(" Año (EJ: 2026) : ")
-        mes = leer_numero(" MES (1-12) : ")
-        dia = leer_numero(" DIA (1-31) : ")
+        anio = leer_numero(" Año: ")
+        mes = leer_numero(" Mes: ")
+        dia = leer_numero(" Día: ")
         fecha_inicio = date(anio, mes, dia)
 
         direccion = input("Direccion: ")
-        telefono = input("Telfono: ")
+        telefono = input("Telefono: ")
 
         while True:
             try:
@@ -40,7 +40,7 @@ class EmpleadoView:
         id_proyecto = leer_numero("ID del proyecto asignado: ")
         id_usuario = leer_numero("ID del usuario del sistema: ")
 
-        return{"nombre":nombre, "correo":correo, "fecha_inicio":fecha_inicio, "direccion":direccion, "telefono":telefono, "salario":salario, "id_departamento":id_departamento, "id_proyecto":id_proyecto, "id_usuario":id_usuario}
+        return {"nombre": nombre, "correo": correo, "fecha_inicio": fecha_inicio, "direccion": direccion, "telefono": telefono, "salario": salario, "id_departamento": id_departamento, "id_proyecto": id_proyecto, "id_usuario": id_usuario}
 
     @staticmethod
     def mostrar_lista_empleados(empleados: list[Empleado]) -> None:
@@ -56,4 +56,3 @@ class EmpleadoView:
     @staticmethod
     def mostrar_mensaje(mensaje:str) -> None:
         print(f"[EMPLEADOS] {mensaje}")
-

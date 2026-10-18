@@ -30,7 +30,7 @@ class DepartamentoDao:
             cursor.execute("SELECT id_departamento, nombre, gerente_asociado FROM departamento")
             filas = cursor.fetchall()
             for fila in filas:
-                departamentos.append(Departamento(fila['nombre'], fila['gerente_asociado'], fila['id_departamento']))
+                departamentos.append(Departamento(fila['id_departamento'], fila['nombre'], fila['gerente_asociado']))
         except Exception as e:
             print(f"Error al obtener departamentos: {e}")
         finally:

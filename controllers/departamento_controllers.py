@@ -12,7 +12,7 @@ class DepartamentoController:
             if opcion == 1:
                 self.agregar_departamento()
             elif opcion == 2:
-                self.mostrar_departamentos()
+                self.mostrar_departamento()
             elif opcion == 0:
                 self.view.mostrar_mensaje("Saliendo de la gestion de departamentos.")
                 break
@@ -32,6 +32,6 @@ class DepartamentoController:
         except ValueError as e:
             self.view.mostrar_mensaje(f"Error en los datos ingresados: {e}")
 
-    def imprimir_departamentos(self) -> None:
+    def mostrar_departamento(self) -> None:
         departamentos = DepartamentoDao.obtener_datos()
         self.view.mostrar_lista_departamentos(departamentos)

@@ -12,7 +12,7 @@ class EmpleadoController:
             if opcion == 1:
                 self.agregar_empleado()
             elif opcion == 2:
-                self.imprimir_empleados()
+                self.imprimir_empleado()
             elif opcion == 0:
                 self.view.mostrar_mensaje("Saliendo de la gestion de empleados.....")
                 break

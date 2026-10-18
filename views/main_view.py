@@ -10,11 +10,11 @@ class MainView:
         print("2.   GESTION DE DEPARTAMENTOS")
         print("3.   GESTION DE PROYECTOS")
         print("4.   REGISTRO TIEMPO")
+        print("5.   GESTION DE USUARIOS")
         print("0.   SALIR")
         print("-" * 30)
         return leer_numero("Seleccione una opcion: ")
 
     @staticmethod
-    def mostrar_mensaje(mensaje:str) -> None:
+    def mostrar_mensaje(mensaje: str) -> None:
         print(f"\n [SISTEMA] {mensaje}")
-        

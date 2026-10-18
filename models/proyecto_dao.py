@@ -1,6 +1,7 @@
 from sqlite3 import Cursor
 from config.database import Database
 from models.proyecto import Proyecto
+from datetime import date
 
 class Proyecto_Dao:
     @staticmethod
@@ -27,10 +28,11 @@ class Proyecto_Dao:
         proyectos = []
         try:
             cursor: Cursor = conn.cursor()
-            cursor.execute("SELECT nombre, descripcion, fecha_inicio, id_departamento FROM proyecto")
+            cursor.execute("SELECT id_proyecto, nombre, descripcion, fecha_inicio, id_departamento FROM proyecto")
             filas = cursor.fetchall()
             for fila in filas:
-                proyectos.append(Proyecto(fila['nombre'], fila['descripcion'], fila['fecha_inicio'], fila['id_departamento']))
+                fecha_real = date.fromisoformat(fila['fecha_inicio'])
+                proyectos.append(Proyecto(fila['id_proyecto'], fila['nombre'], fila['descripcion'], fecha_real, fila['id_departamento']))
         except Exception as e:
             print(f"Error al obtener proyectos: {e}")
         finally:
