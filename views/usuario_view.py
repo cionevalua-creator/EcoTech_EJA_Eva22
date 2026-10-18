@@ -31,7 +31,7 @@ class UsuarioView:
             print("No hay usuarios registrados.")
         else:
             for u in usuarios:
-                print(f"ID: {u.id_usuario} | Login: {u.login} | Hash: {u.contraseña[:15]}...")
+                print(f"ID Usuario: {u.id_usuario} | Login: {u.login} | Contraseña: {u.contraseña[:15]}...")
         print("-" * 30)
 
     @staticmethod
