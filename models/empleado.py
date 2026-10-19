@@ -72,9 +72,9 @@ class Empleado:
         if not telefono.strip():
             raise ValueError("El campo no puede estar vacio.")
         if not telefono.strip().replace("+", "").isdigit():
-            raise ValueError("El numero solo puede contener numeros y es opcional el (+)")
+            raise ValueError("El telefono solo puede contener numeros y es opcional el (+)")
         if len(telefono.strip()) < 9:
-            raise ValueError("El numero debe tener al menos 9 caracteres.")
+            raise ValueError("El telefono debe tener al menos 9 caracteres.")
         self._telefono = telefono.strip()
 
     @property
