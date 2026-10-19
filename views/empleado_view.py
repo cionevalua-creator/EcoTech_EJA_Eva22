@@ -19,13 +19,18 @@ class EmpleadoView:
         print("\n--- AGREGAR NUEVO EMPLEADO ---")
         nombre = input("Nombre: ")
         correo = input("Correo: ")
-
-        print("FECHA DE INICIO: ")
-        anio = leer_numero(" Año: ")
-        mes = leer_numero(" Mes: ")
-        dia = leer_numero(" Día: ")
-        fecha_inicio = date(anio, mes, dia)
-
+        while True:
+            print("FECHA DE INICIO: ")
+            try:
+                anio = leer_numero(" Año: ")
+                mes = leer_numero(" Mes: ")
+                dia = leer_numero(" Día: ")
+                fecha_inicio = date(anio, mes, dia)
+            except:
+                print("La fecha ingresada no es valida.")
+                continue
+            break
+        
         direccion = input("Direccion: ")
         telefono = input("Telefono: ")
 
@@ -54,5 +59,7 @@ class EmpleadoView:
         print("-" * 30)
 
     @staticmethod
+    def mostrar_mensaje(mensaje:str) -> None:
+        print(f"[EMPLEADOS] {mensaje}")
     def mostrar_mensaje(mensaje:str) -> None:
         print(f"[EMPLEADOS] {mensaje}")
